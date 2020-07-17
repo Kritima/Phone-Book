@@ -36,15 +36,15 @@ import androidx.annotation.Nullable;
     public void onCreate(SQLiteDatabase db) {
         String query = "CREATE TABLE " + TABLE_NAME +
                 " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                FIRSTNAME+" VARCHAR(255) , " +
-                LASTNAME+" VARCHAR(225) , " +
-                ADDRESS+" VARCHAR(225) , " +
-                CITY+" VARCHAR(225) , " +
-                PROVINCE+" VARCHAR(225) , " +
-                POSTALCODE+" VARCHAR(225), " +
-                EMAIL+" VARCHAR(225) ," +
-                 PHONE+" VARCHAR(225),"+
-                AREA+" VARCHAR(225));";
+                FIRSTNAME + " VARCHAR(255) , " +
+                LASTNAME + " VARCHAR(225) , " +
+                ADDRESS + " VARCHAR(225) , " +
+                CITY+ " VARCHAR(225) , " +
+                PROVINCE + " VARCHAR(225) , " +
+                POSTALCODE + " VARCHAR(225), " +
+                EMAIL + " VARCHAR(225) , " +
+                 PHONE + " VARCHAR(225), " +
+                AREA + " VARCHAR(225));";
         db.execSQL(query);
     }
     @Override

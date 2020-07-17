@@ -29,7 +29,8 @@ public class MainActivity extends AppCompatActivity {
     TextView no_data;
 
     MyDatabaseHelper myDB;
-    ArrayList<String> book_id, book_title, book_author, book_pages;
+    ArrayList<String> contact_id, contact_firstName, contact_lastName, contact_address, contact_city, contact_province, contact_postalCode, contact_email,
+            contact_phone, contact_area;
     ContactAdapter contactAdapter;
 
     @Override
@@ -51,15 +52,21 @@ public class MainActivity extends AppCompatActivity {
         });
 
         myDB = new MyDatabaseHelper(MainActivity.this);
-        book_id = new ArrayList<>();
-        book_title = new ArrayList<>();
-        book_author = new ArrayList<>();
-        book_pages = new ArrayList<>();
+        contact_id = new ArrayList<>();
+        contact_firstName = new ArrayList<>();
+        contact_lastName = new ArrayList<>();
+        contact_address = new ArrayList<>();
+        contact_city = new ArrayList<>();
+        contact_province = new ArrayList<>();
+        contact_postalCode = new ArrayList<>();
+        contact_email = new ArrayList<>();
+        contact_phone = new ArrayList<>();
+        contact_area = new ArrayList<>();
 
         storeDataInArrays();
 
-        contactAdapter = new ContactAdapter(MainActivity.this,this, book_id, book_title, book_author,
-                book_pages);
+        contactAdapter = new ContactAdapter(MainActivity.this,this, contact_id, contact_firstName, contact_lastName, contact_address, contact_city, contact_province, contact_postalCode, contact_email,
+                contact_phone, contact_area );
         recyclerView.setAdapter(contactAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
     }
@@ -79,10 +86,16 @@ public class MainActivity extends AppCompatActivity {
             no_data.setVisibility(View.VISIBLE);
         }else{
             while (cursor.moveToNext()){
-                book_id.add(cursor.getString(0));
-                book_title.add(cursor.getString(1));
-                book_author.add(cursor.getString(2));
-                book_pages.add(cursor.getString(3));
+                contact_id.add(cursor.getString(0));
+                contact_firstName.add(cursor.getString(1));
+                contact_lastName.add(cursor.getString(2));
+                contact_address.add(cursor.getString(3));
+                contact_city.add(cursor.getString(4));
+                contact_province.add(cursor.getString(5));
+                contact_postalCode.add(cursor.getString(6));
+                contact_email.add(cursor.getString(7));
+                contact_phone.add(cursor.getString(8));
+                contact_area.add(cursor.getString(9));
             }
             empty_imageview.setVisibility(View.GONE);
             no_data.setVisibility(View.GONE);
