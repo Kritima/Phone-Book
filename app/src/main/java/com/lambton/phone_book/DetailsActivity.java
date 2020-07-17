@@ -36,7 +36,7 @@ public class DetailsActivity extends AppCompatActivity {
         email = (TextInputEditText) findViewById(R.id.EmailTextInputEditText);
         phone = (TextInputEditText) findViewById(R.id.PhoneTextInputEditText);
         area = (TextInputEditText) findViewById(R.id.AreaTextInputEditText);
-
+        add_button = (Button) findViewById(R.id.btnAdd);
 
                 add_button.setOnClickListener(new View.OnClickListener() {
                     @Override
