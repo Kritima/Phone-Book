@@ -1,4 +1,4 @@
-package com.lambton.phone_book;
+package com.lambton.phone_book.Adapter;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -13,6 +13,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.lambton.phone_book.Contact;
+import com.lambton.phone_book.R;
 
 import java.util.List;
 

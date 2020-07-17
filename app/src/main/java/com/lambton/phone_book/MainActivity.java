@@ -9,8 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-import java.util.ArrayList;
+import com.lambton.phone_book.Adapter.ContactAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
