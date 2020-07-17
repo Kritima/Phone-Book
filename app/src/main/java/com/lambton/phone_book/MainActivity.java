@@ -7,15 +7,23 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.lambton.phone_book.Adapter.ContactAdapter;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private RecyclerView rvContactList;
-    private ContactAdapter contactAdapter;
-    FloatingActionButton floatingActionButtonAddContact;
+    RecyclerView recyclerView;
+    FloatingActionButton add_button;
+    ImageView empty_imageview;
+    TextView no_data;
+
+    MyDatabaseHelper myDB;
+    ArrayList<String> book_id, book_title, book_author, book_pages;
+    CustomAdapter customAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         rvContactList = findViewById(R.id.rvContactList);
         floatingActionButtonAddContact = findViewById(R.id.floating_action_button_contact);
 
-        contactAdapter = new ContactAdapter(customerListArrayList);
+        contactAdapter = new ContactAdapter(contactsListArrayList);
         rvContactList.setLayoutManager(new LinearLayoutManager(this));
         rvContactList.setAdapter(contactAdapter);
 
