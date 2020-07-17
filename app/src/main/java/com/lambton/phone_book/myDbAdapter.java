@@ -15,12 +15,22 @@ public class myDbAdapter {
         myhelper = new myDbHelper(context);
     }
 
-    public long insertData(String name, String pass)
+    public long insertData(String firstName, String lastName, String address, String city, String province, String postalCode,
+                           String email, String phone, String area)
     {
         SQLiteDatabase dbb = myhelper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(myDbHelper.NAME, name);
-        contentValues.put(myDbHelper.MyPASSWORD, pass);
+        contentValues.put(myDbHelper.FIRSTNAME, firstName);
+        contentValues.put(myDbHelper.LASTNAME, lastName);
+        contentValues.put(myDbHelper.ADDRESS, address);
+        contentValues.put(myDbHelper.CITY, city);
+        contentValues.put(myDbHelper.PROVINCE, province);
+        contentValues.put(myDbHelper.POSTALCODE, postalCode);
+        contentValues.put(myDbHelper.EMAIL, email);
+        contentValues.put(myDbHelper.PHONE, phone);
+        contentValues.put(myDbHelper.AREA, area);
+
+
         long id = dbb.insert(myDbHelper.TABLE_NAME, null , contentValues);
         return id;
     }
@@ -63,13 +73,21 @@ public class myDbAdapter {
     static class myDbHelper extends SQLiteOpenHelper
     {
         private static final String DATABASE_NAME = "myDatabase";    // Database Name
-        private static final String TABLE_NAME = "myTable";   // Table Name
+        private static final String TABLE_NAME = "Contact";   // Table Name
         private static final int DATABASE_Version = 1;    // Database Version
         private static final String UID="_id";     // Column I (Primary Key)
-        private static final String NAME = "Name";    //Column II
-        private static final String MyPASSWORD= "Password";    // Column III
+        private static final String FIRSTNAME = "Firstname";    //Column II
+        private static final String LASTNAME= "Lastname";// Column III
+        private static final String ADDRESS = "Address";
+        private static final String CITY= "City";
+        private static final String PROVINCE= "Province";
+        private static final String POSTALCODE= "Postalcode";
+        private static final String EMAIL= "Email";
+        private static final String PHONE= "Phone";
+        private static final String AREA= "Area";
+
         private static final String CREATE_TABLE = "CREATE TABLE "+TABLE_NAME+
-                " ("+UID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+NAME+" VARCHAR(255) ,"+ MyPASSWORD+" VARCHAR(225));";
+                " ("+UID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+FIRSTNAME+" VARCHAR(255) ,"+ LASTNAME+" VARCHAR(225) ,"+ ADDRESS+" VARCHAR(225) ,"+ CITY+" VARCHAR(225) ,"+ PROVINCE+" VARCHAR(225) ,"+ POSTALCODE+" VARCHAR(225),"+ EMAIL+" VARCHAR(225) ,"+ PHONE+" VARCHAR(225),"+ AREA+" VARCHAR(225));";
         private static final String DROP_TABLE ="DROP TABLE IF EXISTS "+TABLE_NAME;
         private Context context;
 
