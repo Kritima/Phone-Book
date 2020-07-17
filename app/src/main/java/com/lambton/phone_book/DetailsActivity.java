@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.Button;
-import android.view.View;
 
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -26,7 +25,7 @@ public class DetailsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_details2);
+        setContentView(R.layout.activity_details);
 
         firstName = (TextInputEditText) findViewById(R.id.firstNameTextInputEditText);
         lastName = (TextInputEditText) findViewById(R.id.lastNameTextInputEditText);
