@@ -10,16 +10,19 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.text.Editable;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     FloatingActionButton add_button;
     ImageView empty_imageview;
     TextView no_data;
+    EditText search;
 
     MyDatabaseHelper myDB;
     ArrayList<String> contact_id, contact_firstName, contact_lastName, contact_address, contact_city, contact_province, contact_postalCode, contact_email,
@@ -69,6 +73,8 @@ public class MainActivity extends AppCompatActivity {
                 contact_phone, contact_area );
         recyclerView.setAdapter(contactAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+
+
     }
 
     @Override
