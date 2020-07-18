@@ -18,14 +18,11 @@
             android:layout_height="wrap_content"
             android:padding="12dp">
 
-            <TextView
-                android:id="@+id/book_id_txt"
+            <ImageView
+                android:id="@+id/contact_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1"
-                android:textSize="40sp"
-                android:textStyle="bold"
-                android:textColor="#000"
+                app:srcCompat="@drawable/iconcontact"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -40,8 +37,8 @@
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="#000"
-                app:layout_constraintStart_toEndOf="@+id/book_id_txt"
-                app:layout_constraintTop_toTopOf="@+id/book_id_txt" />
+                app:layout_constraintStart_toEndOf="@+id/contact_image"
+                app:layout_constraintTop_toTopOf="@+id/contact_image" />
 
             <TextView
                 android:id="@+id/book_author_txt"
@@ -51,13 +48,16 @@
                 app:layout_constraintStart_toStartOf="@+id/book_title_txt"
                 app:layout_constraintTop_toBottomOf="@+id/book_title_txt" />
 
-            <TextView
+            <ImageView
                 android:id="@+id/book_pages_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/call" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </LinearLayout>

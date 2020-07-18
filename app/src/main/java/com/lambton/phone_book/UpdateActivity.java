@@ -94,6 +94,13 @@ public class UpdateActivity extends AppCompatActivity {
             firstName.setText(fn);
             lastName.setText(ln);
             address.setText(addr);
+            city.setText(ct);
+            province.setText(pv);
+            postalCode.setText(pc);
+            email.setText(em);
+            phone.setText(ph);
+            area.setText(ar);
+
             Log.d("stev", fn+" "+ln+" "+addr);
         }else{
             Toast.makeText(this, "No data.", Toast.LENGTH_SHORT).show();

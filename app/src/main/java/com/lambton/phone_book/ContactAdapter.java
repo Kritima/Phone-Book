@@ -85,15 +85,13 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.MyViewHo
 
     class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView book_id_txt, book_title_txt, book_author_txt, book_pages_txt;
+        TextView  book_title_txt, book_author_txt;
         LinearLayout mainLayout;
 
         MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            book_id_txt = itemView.findViewById(R.id.book_id_txt);
             book_title_txt = itemView.findViewById(R.id.book_title_txt);
             book_author_txt = itemView.findViewById(R.id.book_author_txt);
-            book_pages_txt = itemView.findViewById(R.id.book_pages_txt);
             mainLayout = itemView.findViewById(R.id.mainLayout);
             //Animate Recyclerview
             Animation translate_anim = AnimationUtils.loadAnimation(context, R.anim.translate_anim);
