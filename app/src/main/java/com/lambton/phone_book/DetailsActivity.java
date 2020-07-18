@@ -53,6 +53,7 @@ public class DetailsActivity extends AppCompatActivity {
                         String ar = area.getText().toString();
                         MyDatabaseHelper myDB = new MyDatabaseHelper(DetailsActivity.this);
                         myDB.addContact(fn, ln, addr, ct, pv, pc, em, pn, ar);
+                        finish();
 
                     }
                 });

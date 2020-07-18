@@ -129,7 +129,6 @@ public class MainActivity extends AppCompatActivity {
                 //Refresh Activity
                 Intent intent = new Intent(MainActivity.this, MainActivity.class);
                 startActivity(intent);
-                finish();
             }
         });
         builder.setNegativeButton("No", new DialogInterface.OnClickListener() {

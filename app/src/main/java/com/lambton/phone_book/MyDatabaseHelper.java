@@ -55,6 +55,7 @@ import androidx.annotation.Nullable;
 
     void addContact(String firstName, String lastName, String address, String city, String province, String postalCode,
                     String email, String phone, String area){
+
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues contentValues = new ContentValues();

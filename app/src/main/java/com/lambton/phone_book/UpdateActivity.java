@@ -62,7 +62,15 @@ public class UpdateActivity extends AppCompatActivity {
                 fn = firstName.getText().toString().trim();
                 ln = lastName.getText().toString().trim();
                 addr = address.getText().toString().trim();
+                ct = city.getText().toString().trim();
+                pv = province.getText().toString().trim();
+                pc = postalCode.getText().toString().trim();
+                em = email.getText().toString().trim();
+                ph = phone.getText().toString().trim();
+                ar = area.getText().toString().trim();
+
                 myDB.updateData(id, fn, ln, addr, ct, pv, pc, em, ph, ar);
+                finish();
             }
         });
         delete_button.setOnClickListener(new View.OnClickListener() {
@@ -76,7 +84,11 @@ public class UpdateActivity extends AppCompatActivity {
 
     void getAndSetIntentData(){
         if(getIntent().hasExtra("id") && getIntent().hasExtra("firstname") &&
-                getIntent().hasExtra("lastname") && getIntent().hasExtra("phone")){
+                getIntent().hasExtra("lastname") && getIntent().hasExtra("address")
+                && getIntent().hasExtra("city") && getIntent().hasExtra("province")
+                && getIntent().hasExtra("postalcode") && getIntent().hasExtra("email")
+                && getIntent().hasExtra("phone") && getIntent().hasExtra("area")){
+
             //Getting Data from Intent
             id = getIntent().getStringExtra("id");
             fn = getIntent().getStringExtra("firstname");
